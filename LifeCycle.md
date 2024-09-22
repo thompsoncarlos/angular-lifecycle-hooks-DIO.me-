@@ -1,12 +1,14 @@
+# Angular: Hooks(Ganchos) do Ciclo de Vida
 
-# Subeventos do Hook: DoCheck
+
+## Subeventos do Hook: DoCheck
 
 <p> Quando acontece alguma alteração primeiro é verificado, depois o conteúdo é analisado internamente e por último a visualização.</p>
 
  Checked -> Content -> View
 
 
-## Na Inicialização (Chamada dos métodos): 
+### Na Inicialização (Chamada dos métodos): 
 1. Construtor
 2. Inicialização: **ngOnInit**
 3. Verificação: **ngDoCheck**
@@ -18,7 +20,7 @@
 9. Conteúdo Depois de Verificado: **ngAfterContentChecked**
 10. Visualização Depois de Verificada: **ngAfterViewChecked**
     
-## Na Alteração (Chamada dos métodos): 
+### Na Alteração (Chamada dos métodos): 
 1. Verificação: **ngDoCheck**
 2. Conteúdo Depois de Verificado: **ngAfterContentChecked**
 3. Visualização Depois de Verificada: **ngAfterViewChecked**
