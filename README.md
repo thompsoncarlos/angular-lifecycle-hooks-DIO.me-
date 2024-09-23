@@ -45,4 +45,5 @@ Chama-se a interface OnDestroy e implementa o método ngOnDestoy.
 ````
 
 ## Reference
-[Dio.me: Curso LifeCyle Hooks Angular - Formação Angular](https://web.dio.me/course/631a4bdc-6090-4c60-b982-c3096626c783/learning/5a5421bf-b160-4b7a-b23f-03188b1d9991?back=/track/formacao-angular-developer&tab=undefined&moduleId=undefined)
+- [Dio.me: Curso LifeCyle Hooks Angular - Formação Angular](https://web.dio.me/course/631a4bdc-6090-4c60-b982-c3096626c783/learning/5a5421bf-b160-4b7a-b23f-03188b1d9991?back=/track/formacao-angular-developer&tab=undefined&moduleId=undefined)
+- [Angular Oficial Documentation: Component Lifecycle](https://v17.angular.io/guide/lifecycle-hooks#component-lifecycle)
