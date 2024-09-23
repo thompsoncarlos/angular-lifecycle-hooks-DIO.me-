@@ -7,7 +7,8 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
-  OnChanges
+  OnChanges,
+  OnDestroy
 } from '@angular/core';
 
 // Utilização do decorator @Component da interface Component
@@ -26,7 +27,8 @@ export class CheckSampleComponent implements
   AfterContentChecked,
   AfterContentInit,
   AfterViewChecked,
-  AfterViewInit
+  AfterViewInit,
+  OnDestroy
 {
 
   // Propriedade quantidade definida para verificar os hooks.
@@ -63,7 +65,6 @@ export class CheckSampleComponent implements
     console.log("Verificação: ngDoCheck")
   }
 
-
   // Qunado o primeiro conteúdo é iniciado
   ngAfterContentInit(): void {
     console.log("Conteúdo Depois de Iniciado: ngAfterContentInit");
@@ -84,5 +85,7 @@ export class CheckSampleComponent implements
       console.log("Visualização Depois de Verificada: ngAfterViewChecked");
   }
 
-
+  ngOnDestroy(): void {
+    console.log("Chegou ao Fim!");
+  }
 }

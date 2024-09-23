@@ -1,5 +1,6 @@
 <h1>Angular - Lifecycle Hooks</h1>
 <!-- <app-title name="Produto 1"></app-title>
 <app-title name="Produto 2"></app-title> -->
-<app-check-sample></app-check-sample>
+<app-check-sample *ngIf="isAliveCheckSample"></app-check-sample>
+<button (click)="disposeCheckSample()">Destruir</button>
 <router-outlet></router-outlet>

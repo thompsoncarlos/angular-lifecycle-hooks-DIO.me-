@@ -1,27 +1,48 @@
-# LifeCycle
+# Angular: Hooks(Ganchos) do Ciclo de Vida
+No Angular um componente tem um ciclo de vida que começa quando o componente é instanciado e continua verificando qualquer alteração até a que o componente não se torna mais necessário.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+![Angular: Hooks do Ciclo de Vida](./assets/hooks-in-sequence.png)
 
-## Development server
+## Subeventos do Hook: DoCheck
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p> Quando acontece alguma alteração primeiro é verificado, depois o conteúdo é analisado internamente e por último a visualização.</p>
 
-## Code scaffolding
+ Init -> Checked -> Content -> View<br>
+ Checked -> Content -> View
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Na Inicialização (Chamada dos métodos): 
+1. Construtor
+2. Inicialização: **ngOnInit**
+3. Verificação: **ngDoCheck**
+4. Conteúdo Depois de Iniciado: **ngAfterContentInit**
+5. Conteúdo Depois de Verificado: **ngAfterContentChecked**
+6. Visualização Depois de Incializada: **ngAfterViewInit**
+7. Visualização Depois de Verificada: **ngAfterViewChecked**
+8. Verificação: **ngDoCheck**
+9. Conteúdo Depois de Verificado: **ngAfterContentChecked**
+10. Visualização Depois de Verificada: **ngAfterViewChecked**
+    
+### Na Alteração (Chamada dos métodos): 
+1. Verificação: **ngDoCheck**
+2. Conteúdo Depois de Verificado: **ngAfterContentChecked**
+3. Visualização Depois de Verificada: **ngAfterViewChecked**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Subeventos do Hook DoCheck](./assets/subeventos-do-checked.png)
 
-## Running unit tests
+## OnDestroy
+Quando um componente não necessita estar ativo ou em execiução, é melhor destruir para evitar vazamentos de memória ([Memory Leak](https://wscld.medium.com/memory-leak-no-angular-0049675367db#:~:text=Vazamentos%20de%20mem%C3%B3ria%20no%20Angular,%2C%20potencialmente%2C%20falhas%20na%20aplica%C3%A7%C3%A3o.)), que ocorre quando muitos componentes carregados, porém poucos sendo utilizados ou ativos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Chama-se a interface OnDestroy e implementa o método ngOnDestoy.
 
-## Running end-to-end tests
+````
+  import { OnDestroy } from '@angular/core';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  class LifeCycleHooks implements OnDestroy{
+    ...
+    ngOnDestroy(): void {}
+  }
+````
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Reference
+[Dio.me: Curso LifeCyle Hooks Angular - Formação Angular](https://web.dio.me/course/631a4bdc-6090-4c60-b982-c3096626c783/learning/5a5421bf-b160-4b7a-b23f-03188b1d9991?back=/track/formacao-angular-developer&tab=undefined&moduleId=undefined)
